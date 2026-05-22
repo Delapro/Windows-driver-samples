@@ -23,7 +23,7 @@ jobs:
         run: nuget restore .\packages.config -PackagesDirectory .\packages\
 
       - name: Retrieve and build all available solutions
-        run: .\Build-Samples.ps1 -Verbose
+        run: .\Build-Samples.ps1 -Samples USB.* -Verbose
         env:
           WDS_Configuration: ${{ matrix.configuration }}
           WDS_Platform: ${{ matrix.platform }}

@@ -39,3 +39,10 @@ jobs:
       - name: Show USBView
         run: |
           dir usb*view* -recurse
+
+      - name: Upload USBView
+        uses: actions/upload-artifact@v5
+        with:
+          name: USBView-${{ matrix.configuration }}-${{ matrix.platform }}
+          path: .\a\Windows-driver-samples\Windows-driver-samples\usb\usbview\x64\Release
+          

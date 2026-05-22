@@ -1,12 +1,5 @@
 name: Build all driver samples
 on:
-  push:
-    branches:
-      - main
-      - develop
-    paths-ignore:
-      - '**.md'
-      - 'LICENSE'
   workflow_dispatch:
 
 jobs:
@@ -15,8 +8,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        configuration: [Debug, Release]
-        platform: [x64, arm64]
+        #configuration: [Debug, Release]
+        configuration: [Release]
+        #platform: [x64, arm64]
+        platform: [x64]
     runs-on: windows-2025-vs2026
     steps:
       - name: Check out repository code
